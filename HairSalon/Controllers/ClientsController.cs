@@ -1,17 +1,17 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using FavoriteRestaurant.Models;
+using FavoriteClient.Models;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace FavoriteRestaurant.Controllers
+namespace FavoriteClient.Controllers
 {
-  public class RestaurantsController : Controller
+  public class ClientsController : Controller
   {
-    private readonly FavoriteRestaurantContext _db;
+    private readonly FavoriteClientContext _db;
 
-    public RestaurantsController(FavoriteRestaurantContext db)
+    public ClientsController(FavoriteClientContext db)
     {
       _db = db;
     }
@@ -19,23 +19,23 @@ namespace FavoriteRestaurant.Controllers
     public ActionResult Create()
     {
       ViewBag.Hello = "Hello world!"; // Restaurant Create.cshtml line 8
-      ViewBag.CuisineId = new SelectList(_db.Cuisines, "CuisineId", "Type");
-      ViewBag.PassedHealthInspection = new SelectList(_db.Restaurants, "PassedHealthInspection", "Passed Health Inspection");
+      ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Type");
+      //ViewBag.PassedHealthInspection = new SelectList(_db.Restaurants, "PassedHealthInspection", "Passed Health Inspection");
       return View();
     }
 
     [HttpPost]
-    public ActionResult Create(Restaurant restaurant)
+    public ActionResult Create(Client client)
     {
-      _db.Restaurants.Add(restaurant);
+      _db.Clients.Add(client);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
 
     public ActionResult Index()
     {
-      List<Restaurant> model = _db.Restaurants.Include(restaurants => restaurants.Cuisine).ToList();
-      model.OrderBy(restaurants => restaurants.Name);
+      List<Client> model = _db.Clients.Include(clients => clients.Stylist).ToList();
+      model.OrderBy(clients => clients.Name);
       return View(model);
     }
   }

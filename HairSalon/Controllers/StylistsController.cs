@@ -4,20 +4,20 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace FavoriteRestaurant.Controllers
+namespace FavoriteClient.Controllers
 {
-  public class CuisinesController : Controller
+  public class StylistsController : Controller
   {
-    private readonly FavoriteRestaurantContext _db; 
+    private readonly FavoriteClientContext _db; 
 
-    public CuisinesController(FavoriteRestaurantContext db)
+    public StylistsController(FavoriteClientContext db)
     {
       _db = db;
     }
 
     public ActionResult Index()
     {
-      List<Cuisine> model = _db.Cuisines.OrderBy(cuisine => cuisine.Type).ToList();
+      List<Stylist> model = _db.Stylists.OrderBy(stylist => stylist.Type).ToList();
       return View(model);
     }
 
@@ -27,17 +27,17 @@ namespace FavoriteRestaurant.Controllers
     }
 
     [HttpPost]
-    public ActionResult Create(Cuisine cuisine)
+    public ActionResult Create(Stylist stylist)
     {
-      _db.Cuisines.Add(cuisine);
+      _db.Stylists.Add(stylist);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
 
     public ActionResult Details(int id)
     {
-      Cuisine thisCuisine = _db.Cuisines.FirstOrDefault(cuisine => cuisine.CuisineId == id);
-      return View (thisCuisine);
+      Stylist thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
+      return View (thisStylist);
     }
 
   }
