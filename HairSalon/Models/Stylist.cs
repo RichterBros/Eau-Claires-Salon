@@ -13,6 +13,6 @@ namespace FavoriteClient.Models
 
     public string Type { get; set; }
 
-    public virtual ICollection<Restaurant> Clients { get; set; }
+    public virtual ICollection<Client> Clients { get; set; }
   }
 }

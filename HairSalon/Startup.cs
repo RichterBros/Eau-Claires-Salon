@@ -4,9 +4,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using FavoriteRestaurant.Models;
+using FavoriteClient.Models;
 
-namespace FavoriteRestaurant
+namespace FavoriteClient
 {
   public class Startup
   {
@@ -24,7 +24,7 @@ namespace FavoriteRestaurant
     {
       services.AddMvc();
       services.AddEntityFrameworkMySql()
-        .AddDbContext<FavoriteRestaurantContext>(options => options
+        .AddDbContext<FavoriteClientContext>(options => options
         .UseMySql(Configuration["ConnectionStrings:DefaultConnection"]));
     }
 

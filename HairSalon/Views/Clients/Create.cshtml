@@ -2,25 +2,25 @@
   Layout = "_Layout";
 }
 
-@model FavoriteRestaurant.Models.Restaurant
-@using FavoriteRestaurant.Models
+@model FavoriteClient.Models.Client
+@using FavoriteClient.Models
 
 @* @ViewBag.Hello *@
-<h4>Add a new restaurant</h4>
+<h4>Add a new client</h4>
 
 @using (Html.BeginForm())
 {
   @Html.LabelFor(model => model.Name)
   @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
   <br>
-  @Html.LabelFor(model => model.PriceRange)
+  @* @Html.LabelFor(model => model.PriceRange)
   @Html.TextBoxFor(model => model.PriceRange, new { @class = "form-control" })
   <br>
   @Html.LabelFor(model => model.Takeout)
   @Html.TextBoxFor(model => model.Takeout, new { @class = "form-control" })
   <br>
   @Html.LabelFor(model => model.DineIn)
-  @Html.TextBoxFor(model => model.DineIn, new { @class = "form-control" })
+  @Html.TextBoxFor(model => model.DineIn, new { @class = "form-control" }) *@
   <br>
   @Html.LabelFor(model => model.Address)
   @Html.TextBoxFor(model => model.Address, new { @class = "form-control" })
@@ -28,17 +28,17 @@
   @Html.LabelFor(model => model.PhoneNumber)
   @Html.TextBoxFor(model => model.PhoneNumber, new { @class = "form-control" })
   <br>
-  @Html.LabelFor(model => model.PassedHealthInspection)
+  @* @Html.LabelFor(model => model.PassedHealthInspection)
   @Html.DropDownList("PassedHealthInspection",
                     new SelectList(Enum.GetValues(typeof(Health))),
-                    new { @class = "form-control" })
+                    new { @class = "form-control" }) *@
   <br>
-  @Html.LabelFor(model => model.Cuisine)
-  @Html.DropDownList("CuisineId")
-  @* this is connected to the viewbag from the RestaurantController on line 22 *@
+  @Html.LabelFor(model => model.Stylist)
+  @Html.DropDownList("StylistId")
+  @* this is connected to the viewbag from the ClientsController on line 22 *@
   
   
-  <input type="submit" value="Add new restaurant" class="btn btn-default" />
+  <input type="submit" value="Add new client" class="btn btn-default" />
 }
 
-<p>@Html.ActionLink("Show all restaurants", "Index")</p>
+<p>@Html.ActionLink("Show all clients", "Index")</p>
