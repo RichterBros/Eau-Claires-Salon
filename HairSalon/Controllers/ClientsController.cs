@@ -18,7 +18,7 @@ namespace FavoriteClient.Controllers
 
     public ActionResult Create()
     {
-      ViewBag.Hello = "Hello world!"; // Restaurant Create.cshtml line 8
+      ViewBag.Hello = "Hello world!"; // Client Create.cshtml line 8
       ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Type");
       //ViewBag.PassedHealthInspection = new SelectList(_db.Restaurants, "PassedHealthInspection", "Passed Health Inspection");
       return View();

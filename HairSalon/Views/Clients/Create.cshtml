@@ -2,8 +2,15 @@
   Layout = "_Layout";
 }
 
+
+
 @model FavoriteClient.Models.Client
 @using FavoriteClient.Models
+
+@* @if (model => model.StylistId ==0)
+{
+  <h1>please enter a stylist first</h1>
+} *@
 
 @* @ViewBag.Hello *@
 <h4>Add a new client</h4>
