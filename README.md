@@ -1,6 +1,6 @@
 # _Hair Salon_
 
-#### _C# ASP.NET Core MVC and EF Core practice for Epicodus, 07.31.2020_
+#### _Program to keep track of stylists and clients, 07.31.2020_
 
 #### By _**Erich Richter**_
 
