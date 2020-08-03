@@ -2,22 +2,39 @@
   Layout = "_Layout";
 }
 
-@model FavoriteClient.Models.Client
 @using FavoriteClient.Models
+@model FavoriteClient.Models.Client
 
 <h2>Client Details</h2>
 <hr>
-<h3>@Html.DisplayNameFor(model => model.Name)</h3>
-<h4>@Html.DisplayNameFor(model => model.Stylist)</h4>
+<h4>@Html.DisplayNameFor(model => model.ClientId): @Html.DisplayFor(model => model.ClientId)</h4>
+<h4>@Html.DisplayNameFor(model => model.StylistId): @Html.DisplayFor(model => model.StylistId)</h4>
+<h4>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h4>
+<h4>@Html.DisplayNameFor(model => model.Stylist): @Html.DisplayFor(model =>  model.Stylist)</h4>
+
+
+ 
 @* <h4>@Html.DisplayNameFor(model => model.PriceRange)</h4> *@
 @* <h4>@Html.DisplayNameFor(model => model.Takeout)</h4>
 <h4>@Html.DisplayNameFor(model => model.DineIn)</h4> *@
-<h4>@Html.DisplayNameFor(model => model.Address)</h4>
-<h4>@Html.DisplayNameFor(model => model.PhoneNumber)</h4>
+<h4>@Html.DisplayNameFor(model => model.Address): @Html.DisplayFor(model => model.Address)</h4>
+<h4>@Html.DisplayNameFor(model => model.PhoneNumber): @Html.DisplayFor(model => model.PhoneNumber)</h4>
 @* <h4>@Html.DisplayNameFor(model => model.PassedHealthInspection)</h4> *@
 
 <p>@Html.ActionLink("Show all clients", "Index")</p>
 <p>@Html.ActionLink("Add new client", "Create")</p>
 <p>@Html.ActionLink("Home", "Index", "Home")</p>
 
+@Html.LabelFor(model => model.Stylist): @Html.DisplayFor(model => model.Stylist)
+@* @(Client client in Model) *@
+<div> @ViewBag.StylistId </div>
+
+   
+
+@* <li>@Html.Partial(client.Stylist.Type, Model)</li> *@
+
+
+  
+  
+ @* <li>@Html.ActionLink($"{client.Name}", "Details", new { id = client.ClientId }) | @client.Stylist.Type</li> *@
 

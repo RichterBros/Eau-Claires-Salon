@@ -4,7 +4,9 @@ namespace FavoriteClient.Models
 {
   public class Client
   {
+     [DisplayName("Client Id")]
     public int ClientId { get; set; }
+    [DisplayName("Stylist Id")]
     public int StylistId { get; set; }
     [DisplayName("Client Name:")]
     public string Name { get; set; }
@@ -23,8 +25,13 @@ namespace FavoriteClient.Models
     // [DisplayName("Did they pass their most recent health inspection?:")]
     
     // public Health PassedHealthInspection { get; set; }
-    [DisplayName("What kind of stylist does this client use?:")]
+                 //[DisplayName("What kind of stylist does this client use?:")]
+   [DisplayName("Stylist:")]
     public virtual Stylist Stylist { get; set; }
+  
+
+
+
   }
 
   // public enum Health

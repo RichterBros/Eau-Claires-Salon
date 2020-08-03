@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
-using FavoriteClient.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using FavoriteClient.Models;
 using System.Collections.Generic;
 using System.Linq;
+
 
 namespace FavoriteClient.Controllers
 {
@@ -34,11 +36,20 @@ namespace FavoriteClient.Controllers
       return RedirectToAction("Index");
     }
 
-    public ActionResult Details(int id)
-    {
-      Stylist thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
-      return View (thisStylist);
-    }
+    public ActionResult Details()
+   
+      {
+      List<Stylist> model = _db.Stylists.Include(stylists => stylists.Clients).ToList();
+      // List<Client> model = _db.Clients.Include(clients => clients.Stylist).ToList();
+        
+    
+      return View(model);
+    
+      }
+  
+  
+    
+    
 
   }
 }
