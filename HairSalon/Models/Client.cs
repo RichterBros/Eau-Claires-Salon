@@ -4,6 +4,9 @@ namespace FavoriteClient.Models
 {
   public class Client
   {
+     
+     //public string Description { get; set; }
+     
      [DisplayName("Client Id")]
     public int ClientId { get; set; }
     [DisplayName("Stylist Id")]
