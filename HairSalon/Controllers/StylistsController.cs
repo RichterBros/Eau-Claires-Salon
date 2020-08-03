@@ -40,7 +40,7 @@ namespace FavoriteClient.Controllers
     public ActionResult Details(int id)
    
 {
-Stylist thisStylist = _db.Stylists.Include(stylist => stylist.Clients).FirstOrDefault(stylist =>stylist.StylistId == id); // passes list of restaurants associated with that cuisine ID. Saves result of search of cuisine ID to thisCuisine, returns thisCuisine in View.
+Stylist thisStylist = _db.Stylists.Include(stylist => stylist.Clients).FirstOrDefault(stylist =>stylist.StylistId == id); // passes list of clients associated with that stylist ID. Saves result of search of stylist ID to thisStylist returns thisStylist in View.
 
       return View(thisStylist);
 }
