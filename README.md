@@ -28,13 +28,6 @@ _Keep track of your stylists and their clients._
 * **Input Example:** "Add client to stylist"
 * **Output Example:** ///{}
 
-
-## Stretch Goals
-| Behavior   |   Input   |  Output |  Met? (Y/N)  |
-|----------|:-------------:|------:|-----------:|
-|  |  |  |  |
-
-
 ## Setup/Installation Requirements
 
   1. Follow this [link to the project repository](https://github.com/RichterBros/Eau-Claires-Salon) on GitHub.  
