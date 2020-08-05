@@ -12,18 +12,15 @@ namespace FavoriteClient.Controllers
   public class StylistsController : Controller
   {
     private readonly FavoriteClientContext _db; 
-
     public StylistsController(FavoriteClientContext db)
     {
       _db = db;
     }
-
     public ActionResult Index()
     {
       List<Stylist> model = _db.Stylists.OrderBy(stylist => stylist.Type).ToList();
       return View(model);
     }
-
     public ActionResult Create()
     {
       return View();
@@ -36,35 +33,22 @@ namespace FavoriteClient.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
-
     public ActionResult Details(int id)
    
-{
-Stylist thisStylist = _db.Stylists.Include(stylist => stylist.Clients).FirstOrDefault(stylist =>stylist.StylistId == id); // passes list of clients associated with that stylist ID. Saves result of search of stylist ID to thisStylist returns thisStylist in View.
-
-      return View(thisStylist);
-}
-
-
-
-
-
-      // {
-      // List<Stylist> model = _db.Stylists.Include(stylists => stylists.Clients).ToList();
-      // // List<Client> model = _db.Clients.Include(clients => clients.Stylist).ToList();
-        
+    {
+    Stylist thisStylist = _db.Stylists.Include(stylist => stylist.Clients).FirstOrDefault(stylist =>stylist.StylistId == id);
     
-      // return View(model);
-    
-      // }
-  // {
-  //  Stylist thisStylist = _db.Stylists.FirstOrDefault(stylists => stylists.StylistId == id);
-     
-    
-     
-  //     return View(thisStylist);
-  //   }
-    
-
+    return View(thisStylist);
+    }
   }
 }
+
+
+
+
+
+
+
+    
+
+

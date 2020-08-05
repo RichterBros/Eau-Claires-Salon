@@ -12,28 +12,22 @@
   <h3>No clients have been added yet!</h3>
 }
 
-@* @if ("StylistId" == true)
-{
-  <h3>test</h3>
-} *@
-
-
-
-@* @{
-    @Html.DisplayNameFor(model => model.Stylists[0].StylistId)
-} *@
-
-
-
 @foreach (Client client in Model)
 {
-  
-  
   <li>@Html.ActionLink($"{client.Name}", "Details", new { id = client.ClientId }) | @client.Stylist.Type</li>
 }
-
+<br> 
 <p>@Html.ActionLink("Add new Client", "Create")</p>
+<p>@Html.ActionLink("Home", "Index", "Home")</p> 
+  
+  
 
-@* <p>@Html.ActionLink("Home", "Index", "Home")</p> *@
+
+
+
+
+
+
+
 
 

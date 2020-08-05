@@ -4,33 +4,12 @@
 
 @using FavoriteClient.Models
 @model FavoriteClient.Models.Stylist
-@* @model List<FavoriteClient.Models.Client>; *@
+
 <h2>Stylist Details</h2>
 <hr>
-@* <h3>@Html.DisplayNameFor(model => model.stylist): @Html.DisplayFor(model => model.stylist)</h3> *@
-
-@* @foreach (Client client in Model)
-{
-  
-  
-  <li>@Html.ActionLink($"{client.Name}", "Details", new { id = client.ClientId }) | @client.Stylist.Type</li>
-} *@
-
-@* @foreach (Stylist stylist in Model)
-{
-  
-  <li>@Html.ActionLink($"{stylist.Type}", "Details", new { id = stylist.StylistId }) | @stylist.Clients</li>
-}
-   *@
-
-@* @ViewBag.Identifier = new SelectList(_db.DatabaseTable, "Value", "Display"); *@
-
-@* <h4>@Html.DisplayNameFor(model => model.StylistId): @Html.DisplayFor(model => model.StylistId)</h4> *@
-@* <h4>@Html.DisplayNameFor(model => model.ClientsId): @Html.DisplayFor(model => model.ClientsId)</h4> *@
-@* @ViewBag._db.Stylists.StylistId  *@
-
 @foreach (Client client in @Model.Clients)
 {
   <li>@client.Name </li>
-  
 }
+<br> 
+<p>@Html.ActionLink("Home", "Index", "Home")</p>

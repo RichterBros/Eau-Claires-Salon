@@ -6,7 +6,6 @@ namespace FavoriteClient.Models
   {
     public virtual DbSet<Stylist> Stylists { get; set; }
     public DbSet<Client> Clients { get; set; }
-
     public FavoriteClientContext(DbContextOptions options) : base(options) { }
   }
 }

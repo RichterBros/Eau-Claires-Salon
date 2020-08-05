@@ -15,17 +15,11 @@ namespace FavoriteClient.Controllers
     {
       _db = db;
     }
-
     public ActionResult Create()
     {
-      ViewBag.Hello = "Hello world!"; // Client Create.cshtml line 8
+   
       ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Type");
      
-     
-   
-     
-     
-      //ViewBag.PassedHealthInspection = new SelectList(_db.Restaurants, "PassedHealthInspection", "Passed Health Inspection");
       return View();
     }
 
@@ -36,39 +30,37 @@ namespace FavoriteClient.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
-
     public ActionResult Index()
     {
       List<Client> model = _db.Clients.Include(clients => clients.Stylist).ToList();
       
-        
-    
       return View(model);
     }
-  
     public ActionResult Details(int id)
     {
-      
       Client thisClient = _db.Clients.FirstOrDefault(clients => clients.ClientId == id);
-     
-    
      
       return View(thisClient);
     }
-
-// public ActionResult Details()
-//     {
-      
-//       return View();
-//     }
-
-// public ActionResult Details()
-// {
-
-// return View();
-  
-//   }
-  
-  
   }
 }
+    
+   
+     
+     
+      
+     
+        
+    
+
+
+  
+
+     
+   
+     
+     
+      
+
+
+  
