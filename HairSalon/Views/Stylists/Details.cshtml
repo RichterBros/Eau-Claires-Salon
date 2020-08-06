@@ -7,9 +7,10 @@
 
 <h2>Stylist Details</h2>
 <hr>
+<h4>Clients:</h4>
 @foreach (Client client in @Model.Clients)
 {
-  <li>@client.Name </li>
+  <li> @client.Name </li>
 }
 <br> 
 <p>@Html.ActionLink("Home", "Index", "Home")</p>

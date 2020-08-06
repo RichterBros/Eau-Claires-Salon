@@ -7,6 +7,7 @@ namespace FavoriteClient.Models
     public Stylist()
     {
       this.Clients = new HashSet<Client>();
+      
     }
     public int StylistId { get; set; }
 
